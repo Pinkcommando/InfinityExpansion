@@ -38,7 +38,7 @@ public final class Gear {
     );
     public static final SlimefunItemStack CROWN = new SlimefunItemStack(
             "INFINITY_CROWN",
-            Material.NETHERITE_HELMET,
+            Material.LEATHER_HELMET,
             "&bInfinity Crown",
             "&7Night Vision I",
             "&7Conduit Power I",
@@ -46,7 +46,7 @@ public final class Gear {
     );
     public static final SlimefunItemStack CHESTPLATE = new SlimefunItemStack(
             "INFINITY_CHESTPLATE",
-            Material.NETHERITE_CHESTPLATE,
+            Material.LEATHER_CHESTPLATE,
             "&bInfinity Chestplate",
             "&7Strength II",
             "&7Resistance I",
@@ -55,7 +55,7 @@ public final class Gear {
     );
     public static final SlimefunItemStack LEGGINGS = new SlimefunItemStack(
             "INFINITY_LEGGINGS",
-            Material.NETHERITE_LEGGINGS,
+            Material.LEATHER_LEGGINGS,
             "&bInfinity Leggings",
             "&7Haste III",
             "&7Regeneration I",
@@ -64,7 +64,7 @@ public final class Gear {
     );
     public static final SlimefunItemStack BOOTS = new SlimefunItemStack(
             "INFINITY_BOOTS",
-            Material.NETHERITE_BOOTS,
+            Material.LEATHER_BOOTS,
             "&bInfinity Boots",
             "&7Speed III",
             "&7Dolphins Grace I"
