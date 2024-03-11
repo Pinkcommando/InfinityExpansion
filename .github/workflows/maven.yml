@@ -1,16 +1,15 @@
 name: Java CI
 
 on:
-  push:
+ push:
     branches:
     - master
-  pull_request:
+ pull_request:
     branches:
     - master
 
 jobs:
-  build:
-
+ build:
     name: Maven build
     runs-on: ubuntu-latest
 
@@ -34,4 +33,30 @@ jobs:
           restore-keys: ${{ runner.os }}-m2
 
       - name: Build with Maven
-        run: mvn package --file pom.xml
+        run: mvn install --file pom.xml
+        
+      - name: Generate Unix Timestamp
+        id: timestamp
+        run: echo "UNIX_TIMESTAMP=$(date +%s)" >> $GITHUB_ENV
+
+      - name: Create Release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # This token is provided by Actions, you do not need to create your own token
+        with:
+          tag_name: ${{ env.UNIX_TIMESTAMP }}
+          release_name: 'nightly snapshot'
+          draft: false
+          prerelease: false
+
+      - name: Upload Release Asset
+        id: upload-release-asset
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: ./target/InfinityExpansion vMODIFIED.jar
+          asset_name: InfinityExpansion.jar
+          asset_content_type: application/java-archive
