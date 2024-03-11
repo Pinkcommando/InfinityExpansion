@@ -12,7 +12,7 @@ commands:
   infinityexpansion:
     description: Use /infinityexpansion help for a list of commands
     usage: /infinityexpansion <subcommand>
-    aliases: [ie, ix, infinity]
+    aliases: [ix, infinity]
 
 permissions:
   infinityexpansion.setdata:
