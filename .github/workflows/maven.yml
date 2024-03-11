@@ -38,10 +38,6 @@ jobs:
       - name: List directory contents
         run: ls -la ./target/
 
-      - name: Increment version
-        id: version
-        uses: <version-increment-action-repo>@<version>
-
       - name: Create Release
         id: create_release
         uses: actions/create-release@v1
